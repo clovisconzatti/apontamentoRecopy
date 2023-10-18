@@ -66,7 +66,7 @@
                 <tr>
                     <td> {{ date('d/m/Y', strtotime($cadastroos->data)) }} </td>
                     <td> {{ $cadastroos->os }} </td>
-                    <td> {{ $cadastroos->cliente }} </td>
+                    <td> {{ $cadastroos->cliente_id }} </td>
                     <td> {{ $cadastroos->produto }} </td>
                     <td>
                         <div class="btn-group-vertical">

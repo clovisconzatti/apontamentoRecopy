@@ -110,7 +110,7 @@ class cadastroosController extends Controller
                 "usuario"           => Auth::user()->id
                 , "data"            => $request->data
                 , "os"              => $request->os
-                , "cliente_id"      => $request->cliente
+                , "cliente_id"      => $request->cliente_id
                 , "produto_id"      => $request->produto
                 , "cliente"         => $request->cliente
                 , "produto"         => $request->produto
@@ -121,12 +121,12 @@ class cadastroosController extends Controller
             return response()->json($e);
         }
 
-        foreach($request->movimento_os as $key => $movimentoos_id){
+        foreach($request->mp_id as $key => $mp){
             try{
                 $movimentoos=new movimento_os([
                     'movimentoos_id'          =>$movimentoos_id
-                    ,'mp_id'                  =>$request->mp_id
-                    ,'qnt'                    =>$request->qnt
+                    ,'mp_id'                  =>$mp
+                    ,'qnt'                    =>$request->qnt[$key]
                 ]);
                 $movimentoos->save();
             }catch(\Exception $e){
@@ -142,9 +142,10 @@ class cadastroosController extends Controller
         $cadastro_os        = cadastro_os::where('id','=',$id)->first();
         $clientes           = cliente::orderby('cliente')->get();
         $produtos           = produto::orderby('produto')->get();
+        $materiaprima       = materiaprima::orderby('materiaprima')->get();
 
 
-        return view('cadastroos.edit' , compact('cadastro_os','clientes','produtos'));
+        return view('cadastroos.edit' , compact('cadastro_os','clientes','produtos','materiaprima'));
     }
 
     public function edit($id, Request $request)
@@ -153,7 +154,7 @@ class cadastroosController extends Controller
             $cadastro_os = cadastro_os::find($id);
             $cadastro_os->data            = $request->data;
             $cadastro_os->os              = $request->os;
-            $cadastro_os->cliente_id      = $request->cliente;
+            $cadastro_os->cliente_id      = $request->cliente_id;
             $cadastro_os->produto_id      = $request->produto;
             $cadastro_os->cliente         = $request->cliente;
             $cadastro_os->produto         = $request->produto;
@@ -163,12 +164,12 @@ class cadastroosController extends Controller
         }
 
         $cadastro_os->movimento_os()->delete();
-        foreach($request->movimento_os as $key => $movimentoos_id){
+        foreach($request->mp_id as $key => $mp){
             try{
                 $movimentoos=new movimento_os([
-                    'movimentoos_id'          =>$movimentoos_id
-                    ,'mp_id'                  =>$request->mp_id
-                    ,'qnt'                    =>$request->qnt
+                    'movimentoos_id'          =>$id
+                    ,'mp_id'                  =>$mp
+                    ,'qnt'                    =>$request->qnt[$key]
                 ]);
                 $movimentoos->save();
             }catch(\Exception $e){

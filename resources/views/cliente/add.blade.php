@@ -18,7 +18,7 @@
         <div class="row">
             <div class="form-group col-md-9">
                 Nome do Cliente
-                <input class="form-control" type="text" name="cliente" id="cliente">
+                <input class="form-control limpar" type="text" name="cliente" id="cliente">
             </div>
 
             </div>

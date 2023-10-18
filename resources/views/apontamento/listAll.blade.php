@@ -59,7 +59,6 @@
                 <th width="5%">Hora Incial</th>
                 <th width="5%">Hora Final</th>
                 <th width="5%">Nro_OS</th>
-                <th width="20%">Cliente</th>
                 <th width="5%"></th>
             </tr>
         </thead>
@@ -71,7 +70,6 @@
                     <td> {{ $apontamento->h_inicial }} </td>
                     <td> {{ $apontamento->h_final }} </td>
                     <td> {{ $apontamento->nro_os }} </td>
-                    <td> {{ $apontamento->cliente }} </td>
 
                     <td>
                         <div class="btn-group-vertical">

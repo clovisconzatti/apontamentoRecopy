@@ -15,7 +15,6 @@
             {{-- <div class="form-group col-md-4">Manhã</div> --}}
             {{-- <div class="form-group col-md-4">Tarde</div> --}}
         </div>
-        <h6 class=""><i class=""></i> * Item obrigatório de apontamento *</h6><hr>
         <div class="row">
             <div class="form-group col-md-3">
                 * Data *
@@ -23,24 +22,24 @@
             </div>
             <div class="form-group col-md-2">
                 * Hs Inicial *
-                <input class="form-control" type="time" name="h_inicial" id="h_inicial">
+                <input class="form-control limpar" type="time" name="h_inicial" id="h_inicial">
             </div>
             <div class="form-group col-md-2">
                 * Hs Final *
-                <input class="form-control" type="time" name="h_final" id="h_final">
+                <input class="form-control limpar" type="time" name="h_final" id="h_final">
             </div>
         </div>
             <div class="row">
-            <div class="form-group col-md-2">
-                Nro_OS:
-                <select class="form-control" type="text" name="nro_os" id="nro_os">
+            <div class="form-group col-md-7">
+                Nro_OS - Cliente:
+                <select class="form-control limpar" type="text" name="nro_os" id="nro_os">
                 <option value="%">Todas</option>
                     @foreach ($cadastro_oss as $cadastro_os )
-                        <option value="{{ $cadastro_os->os }}">{{ $cadastro_os->os }}</option>
+                        <option value="{{ $cadastro_os->os }}">{{ $cadastro_os->os }} - {{ $cadastro_os->cliente_id }}</option>
                     @endforeach
                 </select>
             </div>
-            <div class="form-group col-md-5">
+            {{-- <div class="form-group col-md-5">
                 Cliente:
                 <select class="form-control limpar" type="text" name="cliente" id="cliente">
                     <option value="%">Todas</option>
@@ -48,7 +47,7 @@
                         <option value="{{ $cliente->id }}">{{ $cliente->cliente }}</option>
                     @endforeach
                 </select>
-            </div>
+            </div> --}}
             </div>
         <div class="row">
             <div class="form-group col-md-3">

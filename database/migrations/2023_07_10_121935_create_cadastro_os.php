@@ -17,7 +17,7 @@ class CreateCadastroOs extends Migration
             $table->increments('id');
             $table->integer('usuario')->nullable();
             $table->date('data')->nullable();
-            $table->integer('cliente_id')->nullable();
+            $table->string('cliente_id',50)->nullable();
             $table->integer('produto_id')->nullable();
             $table->integer('os')->nullable();
 

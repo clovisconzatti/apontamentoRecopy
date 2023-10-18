@@ -299,13 +299,9 @@ $(document).ready(function(){
         var data            = $(this).find('input#data').val();
         var h_inicial       = $(this).find('input#h_inicial').val();
         var h_final         = $(this).find('input#h_final').val();
-        var nro_os          = $(this).find('input#nro_os').val();
-        var cliente         = $(this).find('select#cliente').val();
-        var id_os           = $(this).find('select#id_os').val();
+        var nro_os          = $(this).find('select#nro_os').val();
 
-        if(cliente=='%'){cliente=0;};
         if(nro_os=='%'){nro_os='';};
-        if(id_os=='%'){id_os='';};
         if(h_inicial=='%'){h_inicial='';};
         if(h_final=='%'){h_final='';};
         if(data=='%'){data='';};
@@ -324,8 +320,6 @@ $(document).ready(function(){
                 ,'h_inicial'    : h_inicial
                 ,'h_final'      : h_final
                 ,'nro_os'       : nro_os
-                ,'cliente'      : cliente
-                ,'id_os'        : id_os
                 }
             // console.log(dados);
             grava(dados,route,type,origem);

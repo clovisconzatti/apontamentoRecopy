@@ -135,7 +135,6 @@ class apontamentoController extends Controller
             $apontamento->cliente           = $request->cliente;
             $apontamento->id_os             = $request->id_os;
             $apontamento->os                = $request->os;
-            $apontamento->cliente           = $request->cliente;
             $apontamento->save();
         }catch(\Exception $e){
             return response()->json($apontamento);

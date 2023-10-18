@@ -24,16 +24,16 @@
             </div>
         </div>
         <div class="row">
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-7">
                 Nro_OS
                 <select class="form-control" type="text" name="nro_os" id="nro_os">
                     <option value="%">Todas</option>
                         @foreach ($cadastro_oss as $cadastro_os )
-                            <option value="{{ $cadastro_os->id_os }}" {{ $cadastro_os->os==$apontamento->nro_os ? 'selected' : '' }}>{{ $cadastro_os->os }}</option>
+                            <option value="{{ $cadastro_os->os }}" {{ $cadastro_os->os==$apontamento->nro_os ? 'selected' : '' }}>{{ $cadastro_os->os }} - {{ $cadastro_os->cliente_id }}</option>
                         @endforeach
                     </select>
             </div>
-            <div class="form-group col-md-5">
+            {{-- <div class="form-group col-md-5">
                 Cliente
                 <select class="form-control limpar" type="text" name="cliente" id="cliente">
                     <option value="%">Todas</option>
@@ -41,7 +41,7 @@
                         <option value="{{ $cliente->id }}" {{ $cliente->id==$apontamento->cliente ? 'selected' : '' }}>{{ $cliente->cliente }}</option>
                     @endforeach
                 </select>
-            </div>
+            </div> --}}
             </div>
         <div class="row">
             <div class="form-group col-md-3">

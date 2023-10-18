@@ -22,14 +22,14 @@
             </div>
             <div class="form-group col-md-2">
                 Nr. OS
-                <input class="form-control" type="number" name="os" id="os" >
+                <input class="form-control limpar" type="number" name="os" id="os" >
             </div>
             <div class="form-group col-md-4">
                 Cliente
                 <select class="form-control limpar" type="text" name="cliente" id="cliente">
                     <option value="%">Todas</option>
                     @foreach ($clientes as $cliente )
-                        <option value="{{ $cliente->id }}">{{ $cliente->cliente }}</option>
+                        <option value="{{ $cliente->cliente }}">{{ $cliente->cliente }}</option>
                     @endforeach
                 </select>
             </div>

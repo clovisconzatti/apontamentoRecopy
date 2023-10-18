@@ -11,8 +11,8 @@ class CreateMovimentoOsTable extends Migration
         Schema::create('movimento_os', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('movimentoos_id')->nullable();
-            $table->integer('mp_is')->nullable();
-            $table->integer('qnt')->nullable();
+            $table->integer('mp_id')->nullable();
+            $table->string('qnt',20)->nullable();
 
             $table->softDeletes();
             $table->timestamps();

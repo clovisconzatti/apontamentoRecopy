@@ -11,7 +11,7 @@
         <input type="hidden" name="origem" id="origem" value="materiaprima">
 
         <div class="row">
-            <div class="form-group col-md-4">
+            <div class="form-group limpar col-md-4">
                 Materia Prima
                 <input class="form-control limpar" type="text" name="materiaprima" id="materiaprima">
             </div>
