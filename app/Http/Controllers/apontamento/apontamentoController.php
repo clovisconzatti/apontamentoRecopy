@@ -107,7 +107,6 @@ class apontamentoController extends Controller
                 , "cliente"         => $request->cliente
                 , "id_os"           => $request->id_os
                 , "os"              => $request->os
-                , "cliente"         => $request->cliente
             ]);
             $apontamento->save();
         }catch(\Exception $e){

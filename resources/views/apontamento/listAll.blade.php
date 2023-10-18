@@ -59,7 +59,7 @@
                 <th width="5%">Hora Incial</th>
                 <th width="5%">Hora Final</th>
                 <th width="5%">Nro_OS</th>
-                <th width="5%"></th>
+                <th width="2%"></th>
             </tr>
         </thead>
         <tbody>
@@ -79,10 +79,10 @@
                                 <span>Ação</span>
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{route('apontamento.formEdit',$apontamento->id)}}">
+                                {{-- <a class="dropdown-item" href="{{route('apontamento.formEdit',$apontamento->id)}}">
                                     <i class="far fa-edit"></i>&nbsp;&nbsp;&nbsp;
                                     <span>Editar</span>
-                                </a>
+                                </a> --}}
                                 <a class="dropdown-item" href="#">
                                     {{-- <form action=" {{ route('apontamento.destroy',['apontamento'=> $apontamento->id ]) }} " method="POST">
                                         @csrf
