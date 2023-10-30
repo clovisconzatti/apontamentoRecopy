@@ -17,7 +17,7 @@
         </div>
         <div class="row">
             <div class="form-group col-md-9">
-                Nome do produto
+                Nome do produto:
                 <input class="form-control" type="text" name="produto" id="produto">
             </div>
 
