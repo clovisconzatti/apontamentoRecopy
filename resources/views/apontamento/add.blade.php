@@ -11,11 +11,6 @@
         <input type="hidden" name="origem" id="origem" value="apontamento">
 
         <div class="row">
-            {{-- <div class="form-group col-md-3"></div> --}}
-            {{-- <div class="form-group col-md-4">Manhã</div> --}}
-            {{-- <div class="form-group col-md-4">Tarde</div> --}}
-        </div>
-        <div class="row">
             <div class="form-group col-md-3">
                 * Data *
                 <input class="form-control" type="date" name="data" id="data"  value="{{ date('Y-m-d') }}" >
@@ -27,6 +22,15 @@
             <div class="form-group col-md-2">
                 * Hs Final *
                 <input class="form-control limpar" type="time" name="h_final" id="h_final">
+            </div>
+            <div class="form-group col-md-3">
+                Colaborador:
+                <select class="form-control limpar" type="text" name="colaborador" id="colaborador">
+                <option value="%">Todas</option>
+                    @foreach ($colaboradores as $colaborador )
+                        <option value="{{ $colaborador->id }}">{{ $colaborador->colaborador }}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
             <div class="row">

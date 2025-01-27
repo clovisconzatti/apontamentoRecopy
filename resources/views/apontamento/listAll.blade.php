@@ -55,10 +55,10 @@
         <thead>
             <tr>
                 <th width="5%">Data</th>
-                <th width="10%">Responsável</th>
                 <th width="5%">Hora Incial</th>
                 <th width="5%">Hora Final</th>
                 <th width="5%">Nro_OS</th>
+                <th width="10%">Colaborador</th>
                 <th width="2%"></th>
             </tr>
         </thead>
@@ -66,10 +66,10 @@
             @foreach ($apontamentos as $apontamento)
             <tr>
                     <td align="center"> {{ date('d/m/Y',strtotime($apontamento->data)) }} </td>
-                    <td> {{ $apontamento->name }} </td>
                     <td> {{ $apontamento->h_inicial }} </td>
                     <td> {{ $apontamento->h_final }} </td>
                     <td> {{ $apontamento->nro_os }} </td>
+                    <td> {{ $apontamento->colaborador }} </td>
 
                     <td>
                         <div class="btn-group-vertical">
@@ -79,10 +79,10 @@
                                 <span>Ação</span>
                             </button>
                             <div class="dropdown-menu">
-                                {{-- <a class="dropdown-item" href="{{route('apontamento.formEdit',$apontamento->id)}}">
+                                <a class="dropdown-item" href="{{route('apontamento.formEdit',$apontamento->id)}}">
                                     <i class="far fa-edit"></i>&nbsp;&nbsp;&nbsp;
                                     <span>Editar</span>
-                                </a> --}}
+                                </a>
                                 <a class="dropdown-item" href="#">
                                     {{-- <form action=" {{ route('apontamento.destroy',['apontamento'=> $apontamento->id ]) }} " method="POST">
                                         @csrf

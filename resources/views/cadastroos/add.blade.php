@@ -26,7 +26,7 @@
             </div>
             <div class="form-group col-md-4">
                 Cliente
-                <select class="form-control limpar" type="text" name="cliente" id="cliente">
+                <select class="form-control limpar" type="text" name="cliente" id="cliente_id">
                     <option value="%">Todas</option>
                     @foreach ($clientes as $cliente )
                         <option value="{{ $cliente->cliente }}">{{ $cliente->cliente }}</option>

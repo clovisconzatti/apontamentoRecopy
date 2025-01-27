@@ -110,7 +110,7 @@ class cadastroosController extends Controller
                 "usuario"           => Auth::user()->id
                 , "data"            => $request->data
                 , "os"              => $request->os
-                , "cliente_id"      => $request->cliente_id
+                , "cliente_id"      => $request->cliente
                 , "produto_id"      => $request->produto
                 , "cliente"         => $request->cliente
                 , "produto"         => $request->produto
@@ -154,7 +154,7 @@ class cadastroosController extends Controller
             $cadastro_os = cadastro_os::find($id);
             $cadastro_os->data            = $request->data;
             $cadastro_os->os              = $request->os;
-            $cadastro_os->cliente_id      = $request->cliente_id;
+            $cadastro_os->cliente_id      = $request->cliente;
             $cadastro_os->produto_id      = $request->produto;
             $cadastro_os->cliente         = $request->cliente;
             $cadastro_os->produto         = $request->produto;

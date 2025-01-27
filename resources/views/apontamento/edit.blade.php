@@ -22,6 +22,15 @@
                 Hs Final
                 <input class="form-control" type="time" name="h_final" id="h_final" value="{{$apontamento->h_final}}">
             </div>
+            <div class="form-group col-md-3">
+                Colaborador
+                <select class="form-control" type="text" name="colaborador" id="colaborador">
+                    <option value="%">Todas</option>
+                        @foreach ($colaboradores as $colaborador )
+                            <option value="{{ $colaborador->id }}" {{ $colaborador->id==$apontamento->colaborador ? 'selected' : '' }}>{{ $colaborador->colaborador }}</option>
+                        @endforeach
+                    </select>
+            </div>
         </div>
         <div class="row">
             <div class="form-group col-md-7">
@@ -33,15 +42,7 @@
                         @endforeach
                     </select>
             </div>
-            {{-- <div class="form-group col-md-5">
-                Cliente
-                <select class="form-control limpar" type="text" name="cliente" id="cliente">
-                    <option value="%">Todas</option>
-                    @foreach ($clientes as $cliente )
-                        <option value="{{ $cliente->id }}" {{ $cliente->id==$apontamento->cliente ? 'selected' : '' }}>{{ $cliente->cliente }}</option>
-                    @endforeach
-                </select>
-            </div> --}}
+
             </div>
         <div class="row">
             <div class="form-group col-md-3">

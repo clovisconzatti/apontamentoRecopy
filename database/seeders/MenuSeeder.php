@@ -42,18 +42,32 @@ class MenuSeeder extends Seeder
                 , 'descricao'   =>'Cliente'
                 , 'tipo'        =>'Link'
                 , 'rota'        =>'cliente.listAll'
-                , 'icone'       =>'fas fa-pen-nib'
+                , 'icone'       =>'far fa-address-card'
+            ],
+            [
+                'ordem'         =>'01.004'
+                , 'descricao'   =>'Colaborador'
+                , 'tipo'        =>'Link'
+                , 'rota'        =>'colaborador.listAll'
+                , 'icone'       =>'fas fa-users'
             ],
 
             [
                 'ordem'         =>'02.000'
-                , 'descricao'   =>'Ordem Serviço'
+                , 'descricao'   =>'Movimentos'
                 , 'tipo'        =>'Título'
                 , 'rota'        =>''
                 , 'icone'       =>''
             ],
             [
                 'ordem'         =>'02.001'
+                , 'descricao'   =>'Entrada MP'
+                , 'tipo'        =>'Link'
+                , 'rota'        =>'entradamp.listAll'
+                , 'icone'       =>'fas fa-book'
+            ],
+            [
+                'ordem'         =>'02.002'
                 , 'descricao'   =>'Cadastro OS'
                 , 'tipo'        =>'Link'
                 , 'rota'        =>'cadastroos.listAll'
@@ -66,14 +80,13 @@ class MenuSeeder extends Seeder
                 , 'rota'        =>''
                 , 'icone'       =>''
             ],
-
+            [
             'ordem'         =>'03.001'
             , 'descricao'   =>'Horas'
             , 'tipo'        =>'Link'
             , 'rota'        =>'apontamento.listAll'
             , 'icone'       =>'far fa-clipboard'
-
-
+            ],
         ];
         menu::insert($menus);
     }

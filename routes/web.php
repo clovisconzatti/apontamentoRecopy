@@ -6,9 +6,11 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Menu\MenuController;
 use App\Http\Controllers\produto\produtoController;
 use App\Http\Controllers\cliente\clienteController;
+use App\Http\Controllers\entradamp\entradampController;
 use App\Http\Controllers\cadastroos\cadastroosController;
 use App\Http\Controllers\materiaprima\materiaprimaController;
 use App\Http\Controllers\apontamento\apontamentoController;
+use App\Http\Controllers\colaborador\colaboradorController;
 use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
@@ -98,6 +100,26 @@ Route::group(['namespace' => 'apontamento'], function () {
     Route::post('apontamento/store',[apontamentoController::class,'strore'])->name('apontamento.store');
     Route::patch('apontamento/edit/{apontamento}',[apontamentoController::class,'edit'])->name('apontamento.edit');
     Route::delete('apontamento/destroy/{apontamento}',[apontamentoController::class,'destroy'])->name('apontamento.destroy');
+});
+
+/********************************** Entrada de MP ***************************************************************/
+Route::group(['namespace' => 'entradamp'], function () {
+    Route::get('entradamp',[entradampController::class,'listAll'])->name('entradamp.listAll');
+    Route::get('entradamp/novo',[entradampController::class,'formadd'])->name('entradamp.add');
+    Route::get('entradamp/editar/{entradamp}',[entradampController::class,'formEdit'])->name('entradamp.formEdit');
+    Route::post('entradamp/store',[entradampController::class,'strore'])->name('entradamp.store');
+    Route::patch('entradamp/edit/{entradamp}',[entradampController::class,'edit'])->name('entradamp.edit');
+    Route::delete('entradamp/destroy/{entradamp}',[entradampController::class,'destroy'])->name('entradamp.destroy');
+});
+
+/********************************** Colabortador ***************************************************************/
+Route::group(['namespace' => 'colaborador'], function () {
+    Route::get('colaborador',[colaboradorController::class,'listAll'])->name('colaborador.listAll');
+    Route::get('colaborador/novo',[colaboradorController::class,'formadd'])->name('colaborador.add');
+    Route::get('colaborador/editar/{colaborador}',[colaboradorController::class,'formEdit'])->name('colaborador.formEdit');
+    Route::post('colaborador/store',[colaboradorController::class,'strore'])->name('colaborador.store');
+    Route::patch('colaborador/edit/{colaborador}',[colaboradorController::class,'edit'])->name('colaborador.edit');
+    Route::delete('colaborador/destroy/{colaborador}',[colaboradorController::class,'destroy'])->name('colaborador.destroy');
 });
 
 });

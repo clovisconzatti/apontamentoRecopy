@@ -219,7 +219,7 @@ $(document).ready(function(){
         var origem = $(this).find('#origem').val();
 
         var data            = $(this).find('input#data').val();
-        var cliente         = $(this).find('select#cliente').val();
+        var cliente         = $(this).find('select#cliente_id').val();
         var produto         = $(this).find('select#produto').val();
         var os              = $(this).find('input#os').val();
 
@@ -237,7 +237,7 @@ $(document).ready(function(){
         if(produto=='%'){produto=0;};
 
           /********************************************************************************************* */
-        if(!data || !cliente || !produto || !os){
+        if(!data || !cliente_id || !produto || !os){
             Swal({
                 title: 'Preencha todos os campos obrigatório',
                 type: 'error',
@@ -300,6 +300,7 @@ $(document).ready(function(){
         var h_inicial       = $(this).find('input#h_inicial').val();
         var h_final         = $(this).find('input#h_final').val();
         var nro_os          = $(this).find('select#nro_os').val();
+        var colaborador     = $(this).find('select#colaborador').val();
 
         if(nro_os=='%'){nro_os='';};
         if(h_inicial=='%'){h_inicial='';};
@@ -307,7 +308,7 @@ $(document).ready(function(){
         if(data=='%'){data='';};
 
         /********************************************************************************************* */
-        if(!data || !h_inicial || !h_final ){
+        if(!data || !h_inicial || !h_final || !nro_os || !colaborador){
             Swal({
                 title: 'Preencha todos os campos obrigatório',
                 type: 'error',
@@ -320,10 +321,83 @@ $(document).ready(function(){
                 ,'h_inicial'    : h_inicial
                 ,'h_final'      : h_final
                 ,'nro_os'       : nro_os
+                ,'colaborador'  : colaborador
                 }
             // console.log(dados);
             grava(dados,route,type,origem);
         }
     })
+
+         /**********************gravar entrada materia prima **************************************************/
+         $(document).on('submit', 'form#cadastro-entradamp', function(event){
+            event.preventDefault()
+            var route = $(this).find('input#route').val();
+            var type = $(this).find('input#type').val();
+            var origem = $(this).find('#origem').val();
+
+            var data                    = $(this).find('input#data').val();
+            var id_fornecedor           = $(this).find('select#id_fornecedor').val();
+            var id_mp                   = $(this).find('select#id_mp').val();
+            var qnt                     = $(this).find('input#qnt').val();
+            var vlr_unit                = $(this).find('input#vlr_unit').val();
+            var vlr_total               = $(this).find('input#vlr_total').val();
+            var vlr_ipi                 = $(this).find('input#vlr_ipi').val();
+            var vlr_frete               = $(this).find('input#vlr_frete').val();
+            var vlr_outros              = $(this).find('input#vlr_outros').val();
+            var nro_nf                  = $(this).find('input#nro_nf').val();
+
+              /********************************************************************************************* */
+            if(!id_mp){
+                Swal({
+                    title: 'Preencha todos os campos obrigatório',
+                    type: 'error',
+                    timer:3000
+                })
+            }else{
+                var dados= {
+                    'data'              : data
+                    ,'id_fornecedor'    : id_fornecedor
+                    ,'id_mp'            : id_mp
+                    ,'qnt'              : qnt
+                    ,'vlr_unit'         : vlr_unit
+                    ,'vlr_total'        : vlr_total
+                    ,'vlr_ipi'          : vlr_ipi
+                    ,'vlr_frete'        : vlr_frete
+                    ,'vlr_outros'       : vlr_outros
+                    ,'nro_nf'           : nro_nf
+
+
+                }
+                grava(dados,route,type,origem);
+            }
+        })
+
+
+                 /**********************gravar colaborador **************************************************/
+                 $(document).on('submit', 'form#cadastro-colaborador', function(event){
+                    event.preventDefault()
+                    var route = $(this).find('input#route').val();
+                    var type = $(this).find('input#type').val();
+                    var origem = $(this).find('#origem').val();
+
+                    var colaborador         = $(this).find('input#colaborador').val();
+                    var setor               = $(this).find('input#setor').val();
+
+                      /********************************************************************************************* */
+                    if(!colaborador){
+                        Swal({
+                            title: 'Preencha todos os campos obrigatório',
+                            type: 'error',
+                            timer:3000
+                        })
+                    }else{
+                        var dados= {
+                            'colaborador'       : colaborador
+                            ,'setor'            : setor
+
+                        }
+                        grava(dados,route,type,origem);
+                    }
+                })
 
 })

@@ -17,7 +17,7 @@ class materiaprimaController extends Controller
             $filtros[]=['materiaprimas.materiaprima','like','%'.$materiaprima.'%'];
         }
 
-        $materiaprimas = materiaprima::where($filtros)->paginate(5);
+        $materiaprimas = materiaprima::where($filtros);
         return view('materiaprima.listAll' , compact('materiaprimas'));
     }
 

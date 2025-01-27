@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\apontamento;
 use App\Models\cadastro_os;
 use App\Models\cliente;
+use App\Models\colaborador;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -68,6 +69,7 @@ class apontamentoController extends Controller
         $apontamentos = apontamento:: leftJoin('cliente','cliente.id','apontamento.cliente')
                                         ->leftJoin('users','users.id','apontamento.user_id')
                                         ->leftJoin('cadastro_os','cadastro_os.id','apontamento.id_os')
+                                        ->leftJoin('colaborador','colaborador.id','apontamento.colaborador')
                                         ->where($filtros)
                                         ->orderBy('data','desc')
                                         ->orderBy('id','desc')
@@ -83,6 +85,7 @@ class apontamentoController extends Controller
                                             , 'users.name'
                                             , 'cadastro_os.id as id_os'
                                             , 'cadastro_os.os'
+                                            , 'colaborador.colaborador'
                                     ]);
         // dd($apontamentos);
         return view('apontamento.listAll' , compact('apontamentos','filtroDtInicial','filtroDtFinal'));
@@ -93,7 +96,8 @@ class apontamentoController extends Controller
         $user_id            = Auth::user()->id;
         $clientes           = cliente::orderby('cliente')->get();
         $cadastro_oss        = cadastro_os::orderby('id')->get();
-        return view('apontamento.add',compact('clientes','cadastro_oss'));
+        $colaboradores       = colaborador::orderby('colaborador')->get();
+        return view('apontamento.add',compact('clientes','cadastro_oss','colaboradores'));
     }
     public function strore(Request $request)
     {
@@ -107,6 +111,7 @@ class apontamentoController extends Controller
                 , "cliente"         => $request->cliente
                 , "id_os"           => $request->id_os
                 , "os"              => $request->os
+                , "colaborador"     => $request->colaborador
             ]);
             $apontamento->save();
         }catch(\Exception $e){
@@ -120,7 +125,8 @@ class apontamentoController extends Controller
         $apontamento = apontamento::where('id','=',$id)->first();
         $clientes           = cliente::orderby('cliente')->get();
         $cadastro_oss         = cadastro_os::orderby('id')->get();
-        return view('apontamento.edit' , compact('apontamento','clientes','cadastro_oss'));
+        $colaboradores        = colaborador::orderby('colaborador')->get();
+        return view('apontamento.edit' , compact('apontamento','clientes','cadastro_oss','colaboradores'));
     }
 
     public function edit($id, Request $request)
@@ -131,9 +137,7 @@ class apontamentoController extends Controller
             $apontamento->h_inicial		    = $request->h_inicial;
             $apontamento->h_final           = $request->h_final;
             $apontamento->nro_os            = $request->nro_os;
-            $apontamento->cliente           = $request->cliente;
-            $apontamento->id_os             = $request->id_os;
-            $apontamento->os                = $request->os;
+            $apontamento->colaborador       = $request->colaborador;
             $apontamento->save();
         }catch(\Exception $e){
             return response()->json($apontamento);
