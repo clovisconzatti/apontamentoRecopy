@@ -19,6 +19,14 @@
                 Unidade
                 <input class="form-control limpar" type="text" name="unidade" id="unidade">
             </div>
+            <div class="form-group col-md-2">
+                Codigo do Sistema
+                <input class="form-control limpar" type="text" name="cod_sistema" id="cod_sistema">
+            </div>
+            <div class="form-group col-md-2">
+                Estoque Minimo
+                <input class="form-control limpar" type="text" name="estoque_minimo" id="estoque_minimo">
+            </div>
         </div>
         <div class="row">
             <div class="form-group col-md-3">

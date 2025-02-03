@@ -14,10 +14,10 @@ class materiaprimaController extends Controller
         $materiaprima  = ($request->get('materiaprima'))? $request->get('materiaprima') : session('materiaprima');
         session()->put('materiaprima', $materiaprima);
         if($materiaprima){
-            $filtros[]=['materiaprimas.materiaprima','like','%'.$materiaprima.'%'];
+            $filtros[]=['materiaprima.materiaprima','like','%'.$materiaprima.'%'];
         }
 
-        $materiaprimas = materiaprima::where($filtros);
+        $materiaprimas = materiaprima::orderBy('materiaprima')->get();
         return view('materiaprima.listAll' , compact('materiaprimas'));
     }
 
@@ -32,6 +32,8 @@ class materiaprimaController extends Controller
                 "id"                => $request->id
                 ,"materiaprima"     => $request->materiaprima
                 ,"unidade"          => $request->unidade
+                ,"cod_sistema"      => $request->cod_sistema
+                ,"estoque_minimo"   => $request->estoque_minimo
                 ]);
             $materiaprima->save();
         }catch(\Exception $e){
@@ -51,8 +53,10 @@ class materiaprimaController extends Controller
     {
         try{
             $materiaprima = materiaprima::find($id);
-            $materiaprima->materiaprima   = $request->materiaprima;
-            $materiaprima->unidade        = $request->unidade;
+            $materiaprima->materiaprima     = $request->materiaprima;
+            $materiaprima->unidade          = $request->unidade;
+            $materiaprima->cod_sistema      = $request->cod_sistema;
+            $materiaprima->estoque_minimo   = $request->estoque_minimo;
             $materiaprima->save();
         }catch(\Exception $e){
             return response()->json($materiaprima);

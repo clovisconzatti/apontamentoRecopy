@@ -143,9 +143,10 @@ class cadastroosController extends Controller
         $clientes           = cliente::orderby('cliente')->get();
         $produtos           = produto::orderby('produto')->get();
         $materiaprima       = materiaprima::orderby('materiaprima')->get();
+        $movimento_os       = movimento_os::where('movimentoos_id',$id)->get();
 
 
-        return view('cadastroos.edit' , compact('cadastro_os','clientes','produtos','materiaprima'));
+        return view('cadastroos.edit' , compact('cadastro_os','clientes','produtos','materiaprima','movimento_os'));
     }
 
     public function edit($id, Request $request)
@@ -156,8 +157,6 @@ class cadastroosController extends Controller
             $cadastro_os->os              = $request->os;
             $cadastro_os->cliente_id      = $request->cliente;
             $cadastro_os->produto_id      = $request->produto;
-            $cadastro_os->cliente         = $request->cliente;
-            $cadastro_os->produto         = $request->produto;
             $cadastro_os->save();
         }catch(\Exception $e){
             return response()->json($cadastro_os);
@@ -176,7 +175,6 @@ class cadastroosController extends Controller
                 return response()->json($e);
             }
         };
-
         return response()->json('success');
     }
 

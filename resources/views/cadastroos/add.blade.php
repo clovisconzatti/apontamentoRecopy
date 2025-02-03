@@ -5,16 +5,9 @@
     <form action="" id="cadastro-cadastroos" nome="cadastro-cadastroos" method="post">
         @csrf
         @method('patch')
-
         <input type="hidden" name="route" id="route" value="/cadastroos/store">
         <input type="hidden" name="type" id="type" value="POST">
         <input type="hidden" name="origem" id="origem" value="cadastroos">
-
-        <div class="row">
-            {{-- <div class="form-group col-md-3"></div> --}}
-            {{-- <div class="form-group col-md-4">Manhã</div> --}}
-            {{-- <div class="form-group col-md-4">Tarde</div> --}}
-        </div>
         <div class="row">
             <div class="form-group col-md-2">
                 Data
@@ -105,7 +98,8 @@
             })
         })
 
- /******************************** clone Item ******************************/
+
+        /******************************** clone Item ******************************/
  var templateItem = $('#sectionItem .sectionItem:first').clone();
     //clear inputs
     templateItem.find("select").val('');

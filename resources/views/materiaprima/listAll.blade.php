@@ -40,8 +40,10 @@
     <table class="table table-bordered table-condensed table-striped fonte-20">
         <thead>
             <tr>
-                <th width="60%">Materia Prima</th>
-                <th width="30%">Unidade</th>
+                <th width="40%">Materia Prima</th>
+                <th width="10%">Unidade</th>
+                <th width="10%">Estoque Minimo</th>
+                <th width="10%">Codigo do Sistema</th>
                 <th width="10%"></th>
             </tr>
         </thead>
@@ -50,6 +52,8 @@
                 <tr>
                     <td> {{ $materiaprima->materiaprima }} </td>
                     <td> {{ $materiaprima->unidade }} </td>
+                    <td> {{ $materiaprima->estoque_minimo }} </td>
+                    <td> {{ $materiaprima->cod_sistema }} </td>
                     <td>
                         <div class="btn-group-vertical">
                             <div class="btn-group">

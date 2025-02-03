@@ -219,7 +219,7 @@ $(document).ready(function(){
         var origem = $(this).find('#origem').val();
 
         var data            = $(this).find('input#data').val();
-        var cliente         = $(this).find('select#cliente_id').val();
+        var cliente         = $(this).find('select#cliente').val();
         var produto         = $(this).find('select#produto').val();
         var os              = $(this).find('input#os').val();
 
@@ -236,8 +236,8 @@ $(document).ready(function(){
         if(cliente=='%'){cliente=0;};
         if(produto=='%'){produto=0;};
 
-          /********************************************************************************************* */
-        if(!data || !cliente_id || !produto || !os){
+        /********************************************************************************************* */
+        if(!data || !cliente || !produto || !os){
             Swal({
                 title: 'Preencha todos os campos obrigatório',
                 type: 'error',
@@ -267,6 +267,8 @@ $(document).ready(function(){
 
         var materiaprima            = $(this).find('input#materiaprima').val();
         var unidade                 = $(this).find('input#unidade').val();
+        var cod_sistema             = $(this).find('input#cod_sistema').val();
+        var estoque_minimo          = $(this).find('input#estoque_minimo').val();
         if(materiaprima=='%'){materiaprima=0;};
 
           /********************************************************************************************* */
@@ -278,8 +280,10 @@ $(document).ready(function(){
             })
         }else{
             var dados= {
-                'materiaprima'         : materiaprima
-                ,'unidade'      : unidade
+                'materiaprima'      : materiaprima
+                ,'unidade'          : unidade
+                ,'cod_sistema'      : cod_sistema
+                ,'estoque_minimo'   : estoque_minimo
 
             }
             grava(dados,route,type,origem);
