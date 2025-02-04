@@ -5,22 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class apontamento extends Model
+class insumo extends Model
 {
     public $timestamps = false;
     protected $fillable= [
         'id'
-        , 'user_id'
-        , 'data'
-        , 'h_inicial'
-        , 'h_final'
-        , 'nro_os'
-        , 'cliente'
-        , 'colaborador'
-        , 'id_os'
+        ,'data'
+        ,'id_materiaprima'
+        ,'qtd'
+        ,'os'
+        ,'unid_medida'
 
     ];
 
     protected $primaryKey = 'id';
-    protected $table = 'apontamento';
+    protected $table = 'insumo';
 }
