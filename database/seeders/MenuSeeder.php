@@ -42,7 +42,7 @@ class MenuSeeder extends Seeder
                 , 'descricao'   =>'Cliente'
                 , 'tipo'        =>'Link'
                 , 'rota'        =>'cliente.listAll'
-                , 'icone'       =>'far fa-address-card'
+                , 'icone'       =>'far fa-address-cardc'
             ],
             [
                 'ordem'         =>'01.004'
@@ -72,6 +72,13 @@ class MenuSeeder extends Seeder
                 , 'tipo'        =>'Link'
                 , 'rota'        =>'cadastroos.listAll'
                 , 'icone'       =>'fas fa-book'
+            ],
+            [
+                'ordem'         =>'02.003'
+                , 'descricao'   =>'Insumos'
+                , 'tipo'        =>'Link'
+                , 'rota'        =>'insumo.listAll'
+                , 'icone'       =>'fas fa-paperclip'
             ],
             [
                 'ordem'         =>'03.000'

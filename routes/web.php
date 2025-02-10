@@ -11,6 +11,7 @@ use App\Http\Controllers\cadastroos\cadastroosController;
 use App\Http\Controllers\materiaprima\materiaprimaController;
 use App\Http\Controllers\apontamento\apontamentoController;
 use App\Http\Controllers\colaborador\colaboradorController;
+use App\Http\Controllers\insumo\insumoController;
 use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
@@ -120,6 +121,16 @@ Route::group(['namespace' => 'colaborador'], function () {
     Route::post('colaborador/store',[colaboradorController::class,'strore'])->name('colaborador.store');
     Route::patch('colaborador/edit/{colaborador}',[colaboradorController::class,'edit'])->name('colaborador.edit');
     Route::delete('colaborador/destroy/{colaborador}',[colaboradorController::class,'destroy'])->name('colaborador.destroy');
+});
+
+/********************************** Insumos ***************************************************************/
+Route::group(['namespace' => 'insumo'], function () {
+    Route::get('insumo',[insumoController::class,'listAll'])->name('insumo.listAll');
+    Route::get('insumo/novo',[insumoController::class,'formadd'])->name('insumo.add');
+    Route::get('insumo/editar/{insumo}',[insumoController::class,'formEdit'])->name('insumo.formEdit');
+    Route::post('insumo/store',[insumoController::class,'strore'])->name('insumo.store');
+    Route::patch('insumo/edit/{insumo}',[insumoController::class,'edit'])->name('insumo.edit');
+    Route::delete('insumo/destroy/{insumo}',[insumoController::class,'destroy'])->name('insumo.destroy');
 });
 
 });
