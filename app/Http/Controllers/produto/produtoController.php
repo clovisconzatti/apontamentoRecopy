@@ -14,10 +14,10 @@ class produtoController extends Controller
         $produto  = ($request->get('produto'))? $request->get('produto') : session('produto');
         session()->put('produto', $produto);
         if($produto){
-            $filtros[]=['produtos.produto','like','%'.$produto.'%'];
+            $filtros[]=['produto.produto','like','%'.$produto.'%'];
         }
 
-        $produtos = produto::where($filtros)->paginate(5);
+        $produtos = produto::where($filtros)->orderBy('produto')->get();
         return view('produto.listAll' , compact('produtos'));
     }
 

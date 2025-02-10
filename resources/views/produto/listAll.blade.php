@@ -25,7 +25,7 @@
             <form method="get" action="{{ route('produto.listAll') }}">
                 @csrf
 
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-6">
                         produto
                         <input class="form-control" type="text" name="Produto" id="Produto">
                     </div>

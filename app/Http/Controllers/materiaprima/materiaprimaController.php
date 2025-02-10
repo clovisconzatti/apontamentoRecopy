@@ -17,7 +17,7 @@ class materiaprimaController extends Controller
             $filtros[]=['materiaprima.materiaprima','like','%'.$materiaprima.'%'];
         }
 
-        $materiaprimas = materiaprima::orderBy('materiaprima')->get();
+        $materiaprimas = materiaprima::where($filtros)->orderBy('materiaprima')->get();
         return view('materiaprima.listAll' , compact('materiaprimas'));
     }
 
