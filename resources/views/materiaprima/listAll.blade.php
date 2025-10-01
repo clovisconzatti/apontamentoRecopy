@@ -44,6 +44,7 @@
                 <th width="10%">Unidade</th>
                 <th width="10%">Estoque Minimo</th>
                 <th width="10%">Codigo do Sistema</th>
+                <th width="10%">MP/Insumo</th>
                 <th width="10%"></th>
             </tr>
         </thead>
@@ -54,6 +55,7 @@
                     <td> {{ $materiaprima->unidade }} </td>
                     <td> {{ $materiaprima->estoque_minimo }} </td>
                     <td> {{ $materiaprima->cod_sistema }} </td>
+                    <td> {{ $materiaprima->tipo }} </td>
                     <td>
                         <div class="btn-group-vertical">
                             <div class="btn-group">

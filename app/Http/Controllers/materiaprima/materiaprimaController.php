@@ -34,6 +34,7 @@ class materiaprimaController extends Controller
                 ,"unidade"          => $request->unidade
                 ,"cod_sistema"      => $request->cod_sistema
                 ,"estoque_minimo"   => $request->estoque_minimo
+                ,"tipo"             => $request->tipo
                 ]);
             $materiaprima->save();
         }catch(\Exception $e){
@@ -57,6 +58,7 @@ class materiaprimaController extends Controller
             $materiaprima->unidade          = $request->unidade;
             $materiaprima->cod_sistema      = $request->cod_sistema;
             $materiaprima->estoque_minimo   = $request->estoque_minimo;
+            $materiaprima->tipo             = $request->tipo;
             $materiaprima->save();
         }catch(\Exception $e){
             return response()->json($materiaprima);

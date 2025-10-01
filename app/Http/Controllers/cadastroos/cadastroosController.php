@@ -100,7 +100,7 @@ class cadastroosController extends Controller
         $cadastro_oss       = cadastro_os::orderby('data','desc')->get();
         $clientes           = cliente::orderby('cliente')->get();
         $produtos           = produto::orderby('produto')->get();
-        $materiaprima       = materiaprima::orderby('materiaprima')->get();
+        $materiaprima       = materiaprima::orderby('materiaprima')->where('materiaprima.tipo','=','MP')->get();
         return view('cadastroos.add',compact('cadastro_oss','clientes','produtos','materiaprima'));
     }
     public function strore(Request $request)
@@ -142,7 +142,7 @@ class cadastroosController extends Controller
         $cadastro_os        = cadastro_os::where('id','=',$id)->first();
         $clientes           = cliente::orderby('cliente')->get();
         $produtos           = produto::orderby('produto')->get();
-        $materiaprima       = materiaprima::orderby('materiaprima')->get();
+        $materiaprima       = materiaprima::orderby('materiaprima')->where('materiaprima.tipo','=','MP')->get();
         $movimento_os       = movimento_os::where('movimentoos_id',$id)->get();
 
 

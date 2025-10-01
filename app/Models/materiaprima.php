@@ -15,6 +15,7 @@ class materiaprima extends Model
         ,'unidade'
         ,'cod_sistema'
         ,'estoque_minimo'
+        ,'tipo'
 
     ];
 

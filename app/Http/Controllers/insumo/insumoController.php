@@ -21,6 +21,7 @@ class insumoController extends Controller
 
         $insumos = insumo:: leftJoin('materiaprima','materiaprima.id','insumo.id_materiaprima')
                                         ->where($filtros)
+                                        ->where('materiaprima.tipo','=','I')
                                         ->orderBy('data','desc')
                                         ->orderBy('id','desc')
                                         ->get([
@@ -38,7 +39,7 @@ class insumoController extends Controller
     {
         $user_id            = Auth::user()->id;
         $insumos            = insumo::orderby('id')->get();
-        $materiaprimas      = materiaprima::orderby('materiaprima')->get();
+        $materiaprimas      = materiaprima::orderby('materiaprima')->where('materiaprima.tipo','=','I')->get();
         return view('insumo.add', compact('insumos','materiaprimas'));
     }
     public function strore(Request $request)

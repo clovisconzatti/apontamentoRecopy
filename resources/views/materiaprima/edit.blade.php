@@ -13,9 +13,17 @@
                 Matéria Prima
                 <input class="form-control" type="text" name="materiaprima" id="materiaprima" value="{{ $materiaprima->materiaprima }}">
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-2">
                 Unidade
-                <input class="form-control" type="text" name="unidade" id="unidade" value="{{ $materiaprima->unidade }}">
+                <select class="form-control limpar" name="unidade" id="unidade">
+                    <option value="">Selecione</option>
+                    <option value="UN" {{($materiaprima->unidade=='UN')? 'selected' : ''}}>Unidade</option>
+                    <option value="PC" {{($materiaprima->unidade=='PC')? 'selected' : ''}}>Peça</option>
+                    <option value="MT" {{($materiaprima->unidade=='MT')? 'selected' : ''}}>Metro</option>
+                    <option value="M²" {{($materiaprima->unidade=='M²')? 'selected' : ''}}>Metro Quadrado</option>
+                    <option value="M³" {{($materiaprima->unidade=='M³')? 'selected' : ''}}>Metro Cubico</option>
+                    <option value="KG" {{($materiaprima->unidade=='KG')? 'selected' : ''}}>Kilo</option>
+                </select>
             </div>
             <div class="form-group col-md-2">
                 Codigo do Sistema
@@ -24,6 +32,14 @@
             <div class="form-group col-md-2">
                 Estoque Minimo
                 <input class="form-control limpar" type="text" name="estoque_minimo" id="estoque_minimo" value="{{ $materiaprima->estoque_minimo }}">
+            </div>
+            <div class="form-group col-md-2">
+                Matéria Prima ou Insumo
+                <Select class="form-control limpar" type="text" name="tipo" id="tipo">
+                    <option value="">Selecione</option>
+                    <option value="MP" {{($materiaprima->tipo=='MP')? 'selected' : ''}}>Materia Prima</option>
+                    <option value="I" {{($materiaprima->tipo=='I')? 'selected' : ''}}>Insumo</option>
+                </Select>
             </div>
         </div>
         <div class="row">

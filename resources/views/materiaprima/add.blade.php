@@ -17,7 +17,15 @@
             </div>
             <div class="form-group col-md-2">
                 Unidade
-                <input class="form-control limpar" type="text" name="unidade" id="unidade">
+                <select class="form-control limpar" type="text" name="unidade" id="unidade">
+                    <option value="">Selecione...</option>
+                    <option value="UN">Unidade</option>
+                    <option value="PC">Peça</option>
+                    <option value="MT">Metro</option>
+                    <option value="M²">Metro Quadrado</option>
+                    <option value="M³">Metro Cubico</option>
+                    <option value="KG">Kilo</option>
+                </select>
             </div>
             <div class="form-group col-md-2">
                 Codigo do Sistema
@@ -27,8 +35,16 @@
                 Estoque Minimo
                 <input class="form-control limpar" type="text" name="estoque_minimo" id="estoque_minimo">
             </div>
+            <div class="form-group col-md-2">
+                Matéria Prima/Insumo
+                <select class="form-control limpar" name="tipo" id="tipo">
+                    <option value="">Selecione...</option>
+                    <option value="MP">Matéria Prima</option>
+                    <option value="I">Insumo</option>
+                </select>
+            </div>
         </div>
-        <div class="row">
+            <div class="row">
             <div class="form-group col-md-3">
                 <button type="submit" name="salvar" value="" id="salvar" class="btn btn-success btn-block">
                     <span class="fas fa-save"></span> Salvar

@@ -25,24 +25,24 @@ class MenuSeeder extends Seeder
             ],
             [
                 'ordem'         =>'01.001'
-                , 'descricao'   =>'Produto'
+                , 'descricao'   =>'Produto/Projeto'
                 , 'tipo'        =>'Link'
                 , 'rota'        =>'produto.listAll'
                 , 'icone'       =>'fas fa-cubes'
             ],
             [
                 'ordem'         =>'01.002'
-                , 'descricao'   =>'Matéria Prima'
+                , 'descricao'   =>'MP/Insumo'
                 , 'tipo'        =>'Link'
                 , 'rota'        =>'materiaprima.listAll'
-                , 'icone'       =>'fas fa-boxes'
+                , 'icone'       =>'fas fa-truck-loading'
             ],
             [
                 'ordem'         =>'01.003'
                 , 'descricao'   =>'Cliente'
                 , 'tipo'        =>'Link'
                 , 'rota'        =>'cliente.listAll'
-                , 'icone'       =>'far fa-address-cardc'
+                , 'icone'       =>'fas fa-user'
             ],
             [
                 'ordem'         =>'01.004'
