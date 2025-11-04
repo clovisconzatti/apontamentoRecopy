@@ -315,7 +315,7 @@ $(document).ready(function(){
         if(data=='%'){data='';};
 
         /********************************************************************************************* */
-        if(!data || !h_inicial || !h_final || !nro_os || !colaborador){
+        if(!data || !h_inicial || !nro_os || !colaborador){
             Swal({
                 title: 'Preencha todos os campos obrigatório',
                 type: 'error',
