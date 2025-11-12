@@ -17,12 +17,13 @@
                 Unidade
                 <select class="form-control limpar" name="unidade" id="unidade">
                     <option value="">Selecione</option>
-                    <option value="UN" {{($materiaprima->unidade=='UN')? 'selected' : ''}}>Unidade</option>
-                    <option value="PC" {{($materiaprima->unidade=='PC')? 'selected' : ''}}>Peça</option>
-                    <option value="MT" {{($materiaprima->unidade=='MT')? 'selected' : ''}}>Metro</option>
-                    <option value="M²" {{($materiaprima->unidade=='M²')? 'selected' : ''}}>Metro Quadrado</option>
-                    <option value="M³" {{($materiaprima->unidade=='M³')? 'selected' : ''}}>Metro Cubico</option>
-                    <option value="KG" {{($materiaprima->unidade=='KG')? 'selected' : ''}}>Kilo</option>
+                    <option value="UN" {{($materiaprima->unidade=='UN')? 'selected' : ''}}>UN</option>
+                    <option value="PC" {{($materiaprima->unidade=='PC')? 'selected' : ''}}>PC</option>
+                    <option value="MT" {{($materiaprima->unidade=='MT')? 'selected' : ''}}>MT</option>
+                    <option value="M²" {{($materiaprima->unidade=='M²')? 'selected' : ''}}>M²</option>
+                    <option value="M³" {{($materiaprima->unidade=='M³')? 'selected' : ''}}>M³</option>
+                    <option value="KG" {{($materiaprima->unidade=='KG')? 'selected' : ''}}>KG</option>
+                    <option value="KG" {{($materiaprima->unidade=='ML')? 'selected' : ''}}>ML</option>
                 </select>
             </div>
             <div class="form-group col-md-2">

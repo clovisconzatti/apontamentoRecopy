@@ -19,12 +19,13 @@
                 Unidade
                 <select class="form-control limpar" type="text" name="unidade" id="unidade">
                     <option value="">Selecione...</option>
-                    <option value="UN">Unidade</option>
-                    <option value="PC">Peça</option>
-                    <option value="MT">Metro</option>
-                    <option value="M²">Metro Quadrado</option>
-                    <option value="M³">Metro Cubico</option>
-                    <option value="KG">Kilo</option>
+                    <option value="UN">UN</option>
+                    <option value="PC">PC</option>
+                    <option value="MT">Mt</option>
+                    <option value="M²">M²</option>
+                    <option value="M³">M³</option>
+                    <option value="KG">KG</option>
+                    <option value="ML">ML</option>
                 </select>
             </div>
             <div class="form-group col-md-2">
